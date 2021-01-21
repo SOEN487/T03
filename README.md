@@ -20,7 +20,7 @@ We encourage you to use either IntelliJ IDE **or** maven from command line in or
         mvn install
 
     Run (Grizzly HTTP server)
-        mvn exec:T01
+        mvn exec:java
 
     Clean:
         mvn clean

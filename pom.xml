@@ -77,7 +77,7 @@
                 <executions>
                     <execution>
                         <goals>
-                            <goal>T01</goal>
+                            <goal>java</goal>
                         </goals>
                     </execution>
                 </executions>

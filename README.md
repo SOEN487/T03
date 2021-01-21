@@ -12,7 +12,7 @@ We encourage you to use either IntelliJ IDE **or** maven from command line in or
 * Browse to src->main->java->com.example.rest
 * Right click to Main and choose Run Main.main()
 
-![Screenshot][img/fig1.png]
+![Screenshot](img/fig1.png)
 
 ## Maven Instructions ##
 

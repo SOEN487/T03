@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example.rest</groupId>
-    <artifactId>jersey-service</artifactId>
+    <artifactId>soen487</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>jersey-service</name>
+    <name>tutorial01</name>
 
     <dependencyManagement>
         <dependencies>

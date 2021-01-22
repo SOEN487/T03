@@ -107,7 +107,8 @@ public class CustomerClient {
      */
     private static void createCustomer(String name, int age) {
         try (CloseableHttpClient client = HttpClients.createDefault()) {
-            HttpPost httpPost = new HttpPost(String.format("http://localhost:8080/restaurant/customer/%s/%d", name, age));
+            HttpPost httpPost = new HttpPost(String.format("http://localhost:8080/restaurant/customer/%s/%d",
+                    name, age));
             CloseableHttpResponse httpresponse = client.execute(httpPost);
             httpresponse.close();
         } catch (IOException e) {
@@ -125,7 +126,8 @@ public class CustomerClient {
         try (CloseableHttpClient client = HttpClients.createDefault()) {
             HttpPut httpPut = new HttpPut(String.format("http://localhost:8080/restaurant/customer/%d/%s/%d",
                     id, name, age));
-            client.execute(httpPut);
+            CloseableHttpResponse httpresponse = client.execute(httpPut);
+            httpresponse.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

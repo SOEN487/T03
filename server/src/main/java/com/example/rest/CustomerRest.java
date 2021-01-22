@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Path("customer")
-public class CustomerClient {
+public class CustomerRest {
 
     /**
      * Class for holding the list of customers and handling the requests

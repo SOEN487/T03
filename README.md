@@ -1,6 +1,6 @@
 # T01 - SOEN 487
 
-This is the template provided to start the web server for Tutorial 1. 
+This is the template provided to start the web server for Tutorial 1.
 You should download this to follow along when watching the tutorial.
 
 The finished example can be found on the finished branch of this repository.
@@ -9,8 +9,8 @@ We encourage you to use either IntelliJ IDE **or** maven from command line in or
 
 ## IntelliJ Instructions ##
 
-* Browse to src->main->java->com.example.rest
-* Right click to Main and choose Run Main.main()
+* Browse to src->main->java->(class with main method)
+* Right click associated class and choose Run main()
 
 ![Screenshot](img/fig1.png)
 
@@ -21,6 +21,12 @@ We encourage you to use either IntelliJ IDE **or** maven from command line in or
 
     Run (Grizzly HTTP server)
         mvn exec:java
+
+    Run (Customer Client)
+        mvn exec:java -f customer-client-pom.xml
+
+    Run (GitHub Client)
+        mvn exec:java -f github-client-pom.fml
 
     Clean:
         mvn clean

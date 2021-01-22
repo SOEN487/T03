@@ -1,6 +1,5 @@
 package com.example.client;
 
-import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.*;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;

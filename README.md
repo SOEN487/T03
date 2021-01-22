@@ -16,17 +16,13 @@ We encourage you to use either IntelliJ IDE **or** maven from command line in or
 
 ## Maven Instructions ##
 
+    Run the following commands in the associated project directory:
+
     Compile:
         mvn install
 
-    Run (Grizzly HTTP server)
+    Run
         mvn exec:java
-
-    Run (Customer Client)
-        mvn exec:java -f customer-client-pom.xml
-
-    Run (GitHub Client)
-        mvn exec:java -f github-client-pom.fml
 
     Clean:
         mvn clean

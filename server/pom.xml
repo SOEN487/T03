@@ -7,7 +7,7 @@
     <artifactId>soen487</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>tutorial01</name>
+    <name>tutorial02</name>
 
     <dependencyManagement>
         <dependencies>
@@ -82,7 +82,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.example.client.GitHubClient</mainClass>
+                    <mainClass>com.example.rest.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,4 +1,4 @@
-package com.example.rest;
+package com.example.server;
 
 public class Customer {
     /**

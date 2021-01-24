@@ -41,14 +41,14 @@ We encourage you to use either IntelliJ IDE **or** maven from command line in or
     Compile:
         mvn install
 
-    Run
-        mvn exec:java
+    Run (Server)
+        mvn exec:java -Pserver
 
     Run (Customer Client)
-        mvn exec:java -f customer-client-pom.xml
+        mvn -e exec:java -Pcustomer
 
     Run (GitHub Client)
-        mvn exec:java -f github-client-pom.fml
+        mvn -e exec:java -Pgithub
 
     Clean:
         mvn clean

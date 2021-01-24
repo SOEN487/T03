@@ -1,0 +1,11 @@
+# IntelliJ project files
+.idea/
+out/
+target/
+
+# editor, vim swap/backup files
+*.swp
+*~
+
+# OS Specific
+.DS_Store

@@ -1,4 +1,4 @@
-package com.example.server;
+package com.example.rest;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

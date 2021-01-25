@@ -75,7 +75,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <mainClass>com.example.server.Main</mainClass>
+                            <mainClass>com.example.rest.Main</mainClass>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -128,7 +128,6 @@
     </profiles>
 
     <build>
-        <sourceDirectory>${src.dir}</sourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

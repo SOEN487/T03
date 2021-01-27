@@ -70,7 +70,7 @@ public class CustomerClient {
         // Create closeable http client to execute requests with
         try (CloseableHttpClient client = HttpClients.createDefault()) {
             // Creating the request to execute
-            HttpGet httpget = new HttpGet(String.format(""));
+            HttpGet httpget = new HttpGet(String.format("http://localhost:8080/restaurant/customer/%d", id));
 
             // Executing the request using the http client and obtaining the response
             CloseableHttpResponse response = client.execute(httpget);

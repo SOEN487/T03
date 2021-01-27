@@ -1,19 +1,32 @@
 package com.example.rest;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="customer")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Customer {
     /**
      * Class that will be used to hold the data for the Rest API Example
      */
 
-    private final int id;
-    private String name;
-    private int age;
+    @XmlElement
+    protected int id;
+    @XmlElement
+    protected String name;
+    @XmlElement
+    protected int age;
     private static int currentId = 0;
 
     public Customer(String name, int age) {
         this.id = currentId++;
         this.name = name;
         this.age = age;
+    }
+
+    public Customer() {
     }
 
     public int getId() {

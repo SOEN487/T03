@@ -4,8 +4,8 @@ import javax.ws.rs.*;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-@Path("customer")
-public class CustomerRest {
+@Path("customerjson")
+public class CustomerRestJson {
 
     /**
      * Class for holding the list of customers and handling the requests
@@ -18,7 +18,7 @@ public class CustomerRest {
      * @return A concatenation of the toString method for all customers
      */
     @GET
-    @Produces("application/xml")
+    @Produces("application/json")
     public ArrayList<Customer> getCustomer() {
         return customers;
     }
@@ -30,7 +30,7 @@ public class CustomerRest {
      */
     @GET
     @Path("{id}")
-    @Produces("application/xml")
+    @Produces("application/json")
     public Customer getCustomerList(@PathParam("id") int id) {
         Customer customer = customers.stream().filter(customer1 -> customer1.getId() == id)
                 .findFirst()
@@ -43,7 +43,7 @@ public class CustomerRest {
      * @param customer to create
      */
     @POST
-    @Consumes("application/xml")
+    @Consumes("application/json")
     public void createCustomer(Customer customer) {
         Customer newCustomer = new Customer(customer.getName(), customer.getAge());
         customers.add(newCustomer);
@@ -56,7 +56,7 @@ public class CustomerRest {
      */
     @PUT
     @Path("{id}")
-    @Consumes("application/xml")
+    @Consumes("application/json")
     public void modifyCustomer(@PathParam("id") int id, Customer customer) {
         deleteCustomer(id);
         customers.add(new Customer(customer.getName(), customer.getAge()));

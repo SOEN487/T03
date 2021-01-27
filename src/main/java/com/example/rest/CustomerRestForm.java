@@ -4,9 +4,8 @@ import javax.ws.rs.*;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-@Path("customer")
-public class CustomerRest {
-
+@Path("/customerform")
+public class CustomerRestForm {
     /**
      * Class for holding the list of customers and handling the requests
      */
@@ -40,26 +39,27 @@ public class CustomerRest {
 
     /**
      * Meant for creating customers using the post method
-     * @param customer to create
+     * @param name of the customer
+     * @param age of the customer
      */
     @POST
-    @Consumes("application/xml")
-    public void createCustomer(Customer customer) {
-        Customer newCustomer = new Customer(customer.getName(), customer.getAge());
+    public void createCustomer(@FormParam("name") String name, @FormParam("age") int age) {
+        Customer newCustomer = new Customer(name, age);
         customers.add(newCustomer);
     }
 
     /**
      * Meant for replacing customer with specific ID
      * @param id of the customer
-     * @param customer to replace with
+     * @param name of the customer
+     * @param age of the customer
      */
     @PUT
     @Path("{id}")
     @Consumes("application/xml")
-    public void modifyCustomer(@PathParam("id") int id, Customer customer) {
+    public void modifyCustomer(@PathParam("id") int id, @FormParam("name") String name, @FormParam("age") int age) {
         deleteCustomer(id);
-        customers.add(new Customer(customer.getName(), customer.getAge()));
+        customers.add(new Customer(name, age));
     }
 
     /**
@@ -71,14 +71,5 @@ public class CustomerRest {
     public void deleteCustomer(@PathParam("id") int id) {
         customers = customers.stream().filter(customer -> customer.getId() != id)
                 .collect(Collectors.toCollection(ArrayList::new));
-    }
-
-    /**
-     * Debugging statement that prints the current state of the list of customers
-     */
-    private void printCustomers() {
-        for(Customer customer: customers) {
-            System.out.println(customer);
-        }
     }
 }

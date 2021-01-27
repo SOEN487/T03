@@ -8,8 +8,14 @@ import java.io.*;
 
 @Path("/files")
 public class FileService {
-    // https://www.javatpoint.com/jax-rs-file-download-example
-    private static final String FILE_PATH = "/home/nick/Documents/SOEN487/T02/pom.xml";
+
+    // File path to download file
+    private static final String FILE_PATH = "/home/nick/Documents/SOEN487/T03/pom.xml";
+
+    /**
+     * The API method will return the file located at FILE_PATH. Modify the path to return whatever
+     * @return file associated with FILE_PATH
+     */
     @GET
     @Path("/txt")
     @Produces("text/plain")
@@ -18,17 +24,20 @@ public class FileService {
         return file;
     }
 
+    /**
+     * This API method will upload a file to the specified file location
+     * @param uploadedInputStream file to upload
+     */
     @POST
     @Path("/upload")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public void uploadFile(@FormDataParam("file") InputStream uploadedInputStream) {
-        String fileLocation = "/home/nick/place.txt";
+        String fileLocation = "/home/nick/place.txt"; // file to save to
         //saving file
         try {
-            FileOutputStream out = new FileOutputStream(new File(fileLocation));
             int read = 0;
             byte[] bytes = new byte[1024];
-            out = new FileOutputStream(new File(fileLocation));
+            FileOutputStream out = new FileOutputStream(fileLocation);
             while ((read = uploadedInputStream.read(bytes)) != -1) {
                 out.write(bytes, 0, read);
             }

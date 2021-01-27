@@ -26,6 +26,12 @@ public class Customer {
         this.age = age;
     }
 
+    public Customer(Customer customer) {
+        this.id = currentId++;
+        this.name = customer.getName();
+        this.age = customer.getAge();
+    }
+
     public Customer() {
     }
 

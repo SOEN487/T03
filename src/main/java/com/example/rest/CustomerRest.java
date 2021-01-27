@@ -45,7 +45,7 @@ public class CustomerRest {
     @POST
     @Consumes("application/xml")
     public void createCustomer(Customer customer) {
-        Customer newCustomer = new Customer(customer.getName(), customer.getAge());
+        Customer newCustomer = new Customer(customer);
         customers.add(newCustomer);
     }
 
@@ -59,7 +59,7 @@ public class CustomerRest {
     @Consumes("application/xml")
     public void modifyCustomer(@PathParam("id") int id, Customer customer) {
         deleteCustomer(id);
-        customers.add(new Customer(customer.getName(), customer.getAge()));
+        customers.add(new Customer(customer));
     }
 
     /**

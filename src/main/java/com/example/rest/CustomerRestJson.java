@@ -45,7 +45,7 @@ public class CustomerRestJson {
     @POST
     @Consumes("application/json")
     public void createCustomer(Customer customer) {
-        Customer newCustomer = new Customer(customer.getName(), customer.getAge());
+        Customer newCustomer = new Customer(customer);
         customers.add(newCustomer);
     }
 
@@ -59,7 +59,7 @@ public class CustomerRestJson {
     @Consumes("application/json")
     public void modifyCustomer(@PathParam("id") int id, Customer customer) {
         deleteCustomer(id);
-        customers.add(new Customer(customer.getName(), customer.getAge()));
+        customers.add(new Customer(customer));
     }
 
     /**
@@ -71,14 +71,5 @@ public class CustomerRestJson {
     public void deleteCustomer(@PathParam("id") int id) {
         customers = customers.stream().filter(customer -> customer.getId() != id)
                 .collect(Collectors.toCollection(ArrayList::new));
-    }
-
-    /**
-     * Debugging statement that prints the current state of the list of customers
-     */
-    private void printCustomers() {
-        for(Customer customer: customers) {
-            System.out.println(customer);
-        }
     }
 }
